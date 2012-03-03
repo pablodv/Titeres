@@ -1,0 +1,10 @@
+doctype 5
+html
+  head
+    title Titeres
+    = stylesheet_link_tag "foundation"
+    = javascript_include_tag "foundation"
+    = csrf_meta_tags
+
+  body
+    = yield
