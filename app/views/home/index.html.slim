@@ -1,0 +1,20 @@
+div.four.columns.content
+  hr/
+  div.row
+    div.tree.columns= link_to "IMAGENES", "#", :class => "red nice button radius"
+    div.tree.columns= link_to "VIDEOS", "#", :class => "red nice button radius"
+  hr/
+
+  = form_for @message, :url => contact_path, :html => { :class => "nice" } do |form|
+    = form.label :name, "Nombre"
+    = form.text_field :name, :class => "input-text"
+    br/
+
+    = form.label :email
+    = form.text_field :email, :class => "input-text"
+    br/
+
+    = form.label :body, "Mensaje"
+    = form.text_area :body, :rows => 5
+
+    = form.submit "OK", :class => "small red nice button radius"

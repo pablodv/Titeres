@@ -1,13 +1,34 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
+ *= require foundation/globals
+ *= require foundation/grid
+ *= require foundation/forms
+ *= require foundation/ui
 */
+
+body {
+  background-color: #000;
+}
+
+div.main {
+  background-image:url("http://placehold.it/960x1050");
+  min-height: 1050px;
+}
+
+.row .four {
+  float: left  !important;
+  max-height: 1050px;
+  background-color: rgba(130, 130, 130, .2);
+  margin-left: 40px;
+  padding: 10px;
+}
+
+form.nice input.input-text, form.nice textarea {
+  width: 295px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+form.nice input[type="submit"] {
+  float: right;
+}

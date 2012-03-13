@@ -56,6 +56,15 @@ module Titeres
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
+    config.action_mailer.smtp_settings = {
+      :address        => "smtp.sendgrid.net",
+      :port           => '587',
+      :authentication => :plain,
+      :user_name      => ENV['SENDGRID_USERNAME'],
+      :password       => ENV['SENDGRID_PASSWORD'],
+      :domain         => "heroku.com"
+    }
+
     Slim::Engine.set_default_options :pretty => true
   end
 end
