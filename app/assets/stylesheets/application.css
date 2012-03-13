@@ -3,6 +3,8 @@
  *= require foundation/grid
  *= require foundation/forms
  *= require foundation/ui
+ *= require foundation/typography
+ *= require jquery.fancybox-1.3.4
 */
 
 body {

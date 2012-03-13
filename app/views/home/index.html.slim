@@ -1,7 +1,8 @@
 div.four.columns.content
   hr/
   div.row
-    div.tree.columns= link_to "IMAGENES", "#", :class => "red nice button radius"
+    div.tree.columns
+      = link_to "IMAGENES", galleries_path, :class => "red nice button radius", :id => "galleries"
     div.tree.columns= link_to "VIDEOS", "#", :class => "red nice button radius"
   hr/
 

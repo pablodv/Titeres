@@ -3,7 +3,6 @@ html
   head
     title Titeres
     = stylesheet_link_tag "application"
-    /= javascript_include_tag "foundation"
     = csrf_meta_tags
 
   body
@@ -11,3 +10,5 @@ html
       div.row
         div.twelve.columns.centered.main
           = yield
+
+  = javascript_include_tag "application"
