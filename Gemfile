@@ -4,6 +4,7 @@ gem 'rails', '3.2.2'
 gem 'mysql2'
 
 gem 'devise'
+gem 'inherited_resources'
 
 gem 'slim'
 gem "zurb-foundation"
