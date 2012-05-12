@@ -1,0 +1,4 @@
+= form_for [:admin, resource], :html => { :class => "nice" } do |f|
+  = render "form", :f => f
+  = f.submit "Add", :class => "small radius nice blue button"
+  = link_to "Cancel", admin_galleries_path

@@ -1,0 +1,25 @@
+doctype 5
+html
+  head
+    title Titeres -Admin
+    = stylesheet_link_tag "admin"
+    = csrf_meta_tags
+
+  body
+    header
+      div.container
+        div.row
+          div.three.columns
+            h2= link_to "Titeres", admin_root_path
+          div.nine.columns
+            = current_admin.email
+            span.red.round.label
+              = link_to "Logout", destroy_admin_session_path
+
+    section
+      div.container
+        div.row
+          div.eight.colums
+            = yield
+
+  = javascript_include_tag "application"

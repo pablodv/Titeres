@@ -3,7 +3,12 @@ Titeres::Application.routes.draw do
   devise_for :admins
 
   namespace :admin do
-    resources :galleries
+    resources :galleries do
+      member do
+        put 'publish'
+        put 'unpublish'
+      end
+    end
 
     root :to => 'galleries#index'
   end

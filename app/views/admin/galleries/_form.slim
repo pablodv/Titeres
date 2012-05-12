@@ -1,0 +1,5 @@
+= f.label :name
+= f.text_field :name, :class => "input-text"
+-if resource.errors.include?(:name)
+  small.error
+    = "Name #{resource.errors[:name][0]}"

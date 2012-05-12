@@ -1,0 +1,19 @@
+h4 Galleries
+
+p= link_to "New Gallery", new_admin_gallery_path, :class => "medium radius nice blue button"
+
+table
+  thead
+    tr
+      th Name
+      th
+  tbody
+  - @galleries.each do |g|
+    tr
+      td= g.name
+      td
+        = link_to "Edit", edit_admin_gallery_path(g)
+        span |
+        = link_to g.published ? "Unpublish" : "Publish", determinate_path(g), :method => :put, :remote => true, :id => g.id
+        span |
+        = link_to "Delete", admin_gallery_path(g), :method => :delete, :confirm => "Are you sure?"
