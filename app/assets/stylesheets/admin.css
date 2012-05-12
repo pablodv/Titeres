@@ -12,6 +12,15 @@ header {
   margin-bottom: 20px;
 }
 
-header a {
+nav, header a {
   color: #FFF;
+}
+
+nav {
+  padding: 5px;
+  float: right;
+}
+
+nav .label {
+  margin-left: 5px;
 }

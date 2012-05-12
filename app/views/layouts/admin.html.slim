@@ -12,9 +12,10 @@ html
           div.three.columns
             h2= link_to "Titeres", admin_root_path
           div.nine.columns
-            = current_admin.email
-            span.red.round.label
-              = link_to "Logout", destroy_admin_session_path
+            nav
+              = current_admin.email
+              span.red.round.label
+                = link_to "Logout", destroy_admin_session_path
 
     section
       div.container
