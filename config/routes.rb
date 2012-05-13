@@ -8,6 +8,8 @@ Titeres::Application.routes.draw do
         put 'publish'
         put 'unpublish'
       end
+
+      resources :gallery_images
     end
 
     root :to => 'galleries#index'

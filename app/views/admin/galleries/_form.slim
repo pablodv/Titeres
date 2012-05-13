@@ -1,5 +1,12 @@
 = f.label :name
 = f.text_field :name, :class => "input-text"
--if resource.errors.include?(:name)
-  small.error
-    = "Name #{resource.errors[:name][0]}"
+= make_mistake(resource, :name)
+
+- unless resource.new_record?
+  div#uploader
+
+  - content_for :right_side do
+    - if resource.images.any?
+      div.panel
+        - resource.images.each do |i|
+          = image_tag i.url(:thumb)

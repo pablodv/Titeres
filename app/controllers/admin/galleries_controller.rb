@@ -4,7 +4,10 @@ class Admin::GalleriesController < InheritedResources::Base
   layout "admin"
 
   def create
-    create!{ collection_path }
+    create! do |success, failure|
+      success.html { edit_admin_gallery_path resource }
+      failure.html { render "new" }
+    end
   end
 
   def update

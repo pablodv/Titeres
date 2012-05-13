@@ -5,6 +5,7 @@ gem 'mysql2'
 
 gem 'devise'
 gem 'inherited_resources'
+gem 'paperclip'
 
 gem 'slim'
 gem "zurb-foundation"

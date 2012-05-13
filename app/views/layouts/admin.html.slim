@@ -18,9 +18,10 @@ html
                 = link_to "Logout", destroy_admin_session_path
 
     section
-      div.container
-        div.row
-          div.eight.colums
-            = yield
+      div.row
+        div.six.columns
+          = yield
+        div.six.columns
+          = yield :right_side
 
-  = javascript_include_tag "application"
+  = javascript_include_tag "admin"
