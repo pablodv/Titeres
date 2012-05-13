@@ -1,0 +1,17 @@
+h4 Videos
+
+p= link_to "New Video", new_admin_video_path, :class => "medium radius nice blue button"
+
+table
+  thead
+    tr
+      th Name
+      th
+  tbody
+  - @videos.each do |v|
+    tr
+      td= v.name
+      td
+        = link_to "Edit", edit_admin_video_path(v)
+        span |
+        = link_to "Delete", admin_video_path(v), :method => :delete, :confirm => "Are you sure?"

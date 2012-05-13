@@ -20,8 +20,10 @@ html
     section
       div.row
         ul.breadcrumbs
-          li= link_to "Galleries", admin_galleries_path, :class => "main"
-          li= link_to "Videos", "#", :class => "main"
+          li class="#{available('galleries')}"
+            = link_to "Galleries", admin_galleries_path
+          li class="#{available('videos')}"
+            = link_to "Videos", admin_videos_path
 
       div.row
         div.six.columns

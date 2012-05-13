@@ -4,4 +4,8 @@ module ApplicationHelper
       content_tag :small, "#{field.to_s.titleize} #{resource.errors[:name][0]}", :class => "error"
     end
   end
+
+  def available(resource)
+    controller_name == resource ? 'current' : ''
+  end
 end

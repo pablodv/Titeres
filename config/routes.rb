@@ -9,8 +9,10 @@ Titeres::Application.routes.draw do
         put 'unpublish'
       end
 
-      resources :gallery_images
+      resources :gallery_images, :only => :create
     end
+
+    resources :videos
 
     root :to => 'galleries#index'
   end
