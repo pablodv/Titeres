@@ -19,6 +19,11 @@ html
 
     section
       div.row
+        ul.breadcrumbs
+          li= link_to "Galleries", admin_galleries_path, :class => "main"
+          li= link_to "Videos", "#", :class => "main"
+
+      div.row
         div.six.columns
           = yield
         div.six.columns
