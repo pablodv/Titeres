@@ -17,7 +17,8 @@ Titeres::Application.routes.draw do
     root :to => 'galleries#index'
   end
 
-  resources :galleries
+  resources :galleries, :only => [:index, :show]
+  resources :videos, :only => [:index, :show]
 
   match 'contact' => 'contact#create', :as => 'contact', :via => :post
 

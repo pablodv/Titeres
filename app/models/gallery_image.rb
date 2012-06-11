@@ -3,7 +3,8 @@ class GalleryImage < ActiveRecord::Base
 
   has_attached_file :image,
     :styles => {
-      :thumb => "75x75#"
+      :thumb => "75x75#",
+      :small => "100x100#"
     }
 
   validates_attachment :image, :presence => true,

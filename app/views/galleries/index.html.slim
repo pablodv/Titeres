@@ -1,3 +1,9 @@
 h3 Galerias
-- 4.times do
-  div= link_to image_tag("http://placehold.it/100x100"), "#"
+- @galleries.each_with_index do |g, index|
+  - if index > 1 && index.divmod(5)[1] == 0
+      br/
+
+  div.gallery
+    = link_to image_tag(g.first), gallery_path(g), :class => "fancybox"
+
+= javascript_tag "showGallery();"

@@ -5,7 +5,7 @@ class Admin::GalleriesController < InheritedResources::Base
 
   def create
     create! do |success, failure|
-      success.html { edit_admin_gallery_path resource }
+      success.html { redirect_to edit_admin_gallery_path(resource) }
       failure.html { render "new" }
     end
   end

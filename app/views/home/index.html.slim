@@ -1,4 +1,5 @@
 div.four.columns.content
+  = image_tag asset_path("title.png")
   hr/
   div.row
     div.tree.columns
@@ -18,4 +19,5 @@ div.four.columns.content
     = form.label :body, "Mensaje"
     = form.text_area :body, :rows => 5
 
+    span.tel Tel:0381-4810143 / Cel:0381-154136698
     = form.submit "OK", :class => "small red nice button radius"

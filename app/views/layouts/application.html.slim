@@ -6,9 +6,11 @@ html
     = csrf_meta_tags
 
   body
+    div.transparent
+      = "&nbsp;"
     div.container
       div.row
-        div.twelve.columns.centered.main
+        div.twelve.columns.centered
           = yield
 
   = javascript_include_tag "application"
