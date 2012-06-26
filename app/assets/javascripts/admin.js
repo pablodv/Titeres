@@ -16,7 +16,7 @@ function initPlupload() {
   $("#uploader").pluploadQueue({
     // General settings
     runtimes : 'gears,flash,silverlight,browserplus,html5',
-    url : '/admin/galleries/1/gallery_images',
+    url : '/admin/galleries/' + $('#gallery_id').val() + '/gallery_images',
     max_file_size : '2mb',
     chunk_size : '1mb',
     unique_names : true,
@@ -33,6 +33,14 @@ function initPlupload() {
     flash_swf_url : '/assets/admin/plupload.flash.swf',
 
     // Silverlight settings
-    silverlight_xap_url : '/assets/admin/plupload.silverlight.xap'
+    silverlight_xap_url : '/assets/admin/plupload.silverlight.xap',
+
+    init: {
+      FileUploaded: function(up, file, info) {
+        var json_response = eval('(' + info.response + ')');
+        $('div.panel').append('<img src=' + json_response.src + '/>')
+      }
+
+    }
   });
 }

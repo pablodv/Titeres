@@ -7,9 +7,11 @@ class Admin::GalleryImagesController < InheritedResources::Base
     unless params[:file].blank?
       @gallery_image = GalleryImage.create_image(params[:file], params[:gallery_id])
 
-      @gallery_image.save
+      if @gallery_image.save
+        render :inline => "{ src : '#{@gallery_image.image.url(:thumb)}', status : 200 }"
+      else
+        render :nothing => true
+      end
     end
-
-    render :nothing => true
   end
 end

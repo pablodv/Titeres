@@ -1,6 +1,11 @@
 = f.label :name
 = f.text_field :name, :class => "input-text"
 
-= f.label :media
-= f.file_field :media, :class => "input-text"
-= make_mistake(resource, :video)
+= f.label :ogg
+= f.file_field :ogg, :class => "input-text"
+= make_mistake(resource, :ogg)
+
+
+= f.label :mpeg
+= f.file_field :mpeg, :class => "input-text"
+= make_mistake(resource, :mpeg)

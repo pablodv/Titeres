@@ -4,6 +4,6 @@ h3 Galerias
       br/
 
   div.gallery
-    = link_to image_tag(g.first), gallery_path(g), :class => "fancybox"
+    = link_to image_tag("..#{g.first}"), gallery_path(g), :class => "fancybox"
 
 = javascript_tag "showGallery();"

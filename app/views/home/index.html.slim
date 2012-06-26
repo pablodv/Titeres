@@ -10,11 +10,9 @@ div.four.columns.content
   = form_for @message, :url => contact_path, :html => { :class => "nice" } do |form|
     = form.label :name, "Nombre"
     = form.text_field :name, :class => "input-text"
-    br/
 
     = form.label :email
     = form.text_field :email, :class => "input-text"
-    br/
 
     = form.label :body, "Mensaje"
     = form.text_area :body, :rows => 5

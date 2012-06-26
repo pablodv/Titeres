@@ -3,10 +3,11 @@
 = make_mistake(resource, :name)
 
 - unless resource.new_record?
+  = f.hidden_field :id
   div#uploader
 
   - content_for :right_side do
-    - if resource.images.any?
-      div.panel
+    .panel
+      - if resource.images.any?
         - resource.images.each do |i|
           = image_tag i.url(:thumb)

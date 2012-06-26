@@ -5,8 +5,8 @@
 //= require jquery.fancybox-1.3.4.pack
 
 $(document).ready(function() {
-  $("a#galleries").fancybox({'width' : '200'});
-   $("div.transparent").height($(document).height());
+  $("a#galleries").fancybox({'autoDimensions' : false});
+  $("div.transparent").height($(document).height());
 });
 
 function showGallery() {
@@ -18,7 +18,7 @@ function showGallery() {
       cache : false,
       url   : $(this).attr('href'),
       success: function(data) {
-        $.fancybox(data, {});
+        $.fancybox(data, {'autoDimensions' : false});
       }
     });
 
@@ -27,5 +27,5 @@ function showGallery() {
 }
 
 function openGallery() {
-  $("a[rel=group]").fancybox({});
+  $("a[rel=group]").fancybox({'autoDimensions' : false});
 }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120513030504) do
+ActiveRecord::Schema.define(:version => 20120623213831) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -56,6 +56,14 @@ ActiveRecord::Schema.define(:version => 20120513030504) do
     t.string   "media_content_type"
     t.integer  "media_file_size"
     t.datetime "media_updated_at"
+    t.string   "ogg_file_name"
+    t.string   "ogg_content_type"
+    t.integer  "ogg_file_size"
+    t.datetime "ogg_updated_at"
+    t.string   "mpeg_file_name"
+    t.string   "mpeg_content_type"
+    t.integer  "mpeg_file_size"
+    t.datetime "mpeg_updated_at"
   end
 
 end
