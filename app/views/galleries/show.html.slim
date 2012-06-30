@@ -1,8 +1,24 @@
-h3= resource.name.titleize
-- resource.gallery_images.each_with_index do |gi, index|
-  - if index > 1 && index.divmod(5)[1] == 0
-    br/
-  div.gallery
-    = link_to image_tag(gi.image.url(:small)), gi.image.url(:original), :rel => "group"
+#bg
+  = link_to "", "#", class: "nextImageBtn", title: "next"
+  = link_to "", "#", class: "prevImageBtn", title: "previous"
+  = image_tag asset_path(resource.gallery_images.first.image.url), size: "1680x1050", id: "bgimg"
 
-= javascript_tag "openGallery();"
+#preloader
+  = image_tag asset_path("ajax-loader_dark.gif"), size: "32x32"
+
+#img_title
+
+/<div id="toolbar">
+/  <a href="#" title="Maximize" onClick="ImageViewMode('full');return false">
+/    <img src="toolbar_fs_icon.png" width="50" height="50"  />
+/  </a>
+/</div>
+
+#thumbnails_wrapper
+  #outer_container
+    .thumbScroller
+      .container
+        - resource.gallery_images.each do |gi|
+          .content
+            div
+              = link_to image_tag(asset_path(gi.image.url(:small))), asset_path(gi.image.url),class: "thumb"

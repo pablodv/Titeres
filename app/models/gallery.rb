@@ -1,4 +1,7 @@
 class Gallery < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :name, use: [:slugged, :history]
+
   has_many :gallery_images, :dependent => :destroy
   has_one  :first_image,  :class_name => "GalleryImage"
 

@@ -10,4 +10,4 @@
     .panel
       - if resource.images.any?
         - resource.images.each do |i|
-          = image_tag i.url(:thumb)
+          = image_tag asset_path(i.url(:thumb))
