@@ -7,8 +7,30 @@
 
 $(document).ready(function() {
   $("a#galleries").fancybox({'autoDimensions' : false});
+  $("a#videos").fancybox({'autoDimensions' : false});
   $("div.transparent").height($(document).height());
 });
+
+function showVideo() {
+  $("a.fancybox").click(function(event) {
+    event.preventDefault();
+
+    $.ajax({
+      type  : "GET",
+      cache : false,
+      url   : $(this).attr('href'),
+      success: function(data) {
+        $.fancybox(data, {
+          'autoDimensions' : false,
+          'width'          : 724,
+          'height'         : 484
+        });
+      }
+    });
+
+    event.stopPropagation();
+  });
+}
 
 function slider() {
   //config

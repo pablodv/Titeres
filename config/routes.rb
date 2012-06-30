@@ -12,13 +12,18 @@ Titeres::Application.routes.draw do
       resources :gallery_images, :only => :create
     end
 
-    resources :videos
+    resources :videos do
+      member do
+        put 'publish'
+        put 'unpublish'
+      end
+    end
 
     root :to => 'galleries#index'
   end
 
   resources :galleries, :only => [:index, :show]
-  resources :videos, :only => [:index, :show]
+  resources :videos,    :only => [:index, :show]
 
   match 'contact' => 'contact#create', :as => 'contact', :via => :post
 

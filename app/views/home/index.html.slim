@@ -4,7 +4,8 @@ div.four.columns.content
   div.row
     div.tree.columns
       = link_to "IMAGENES", galleries_path, :class => "red nice button radius", :id => "galleries"
-    div.tree.columns= link_to "VIDEOS", "#", :class => "red nice button radius"
+    div.tree.columns
+      = link_to "VIDEOS", videos_path, :class => "red nice button radius", :id => "videos"
   hr/
 
   = form_for @message, :url => contact_path, :html => { :class => "nice" } do |form|

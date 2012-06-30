@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120630000554) do
+ActiveRecord::Schema.define(:version => 20120630165652) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -64,8 +64,8 @@ ActiveRecord::Schema.define(:version => 20120630000554) do
 
   create_table "videos", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
     t.string   "media_file_name"
     t.string   "media_content_type"
     t.integer  "media_file_size"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20120630000554) do
     t.string   "mpeg_content_type"
     t.integer  "mpeg_file_size"
     t.datetime "mpeg_updated_at"
+    t.boolean  "published",          :default => false
   end
 
 end

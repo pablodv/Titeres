@@ -8,4 +8,12 @@ module ApplicationHelper
   def available(resource)
     controller_name == resource ? 'current' : ''
   end
+
+  def determinate_path(resource)
+    if resource.published
+      [:unpublish, :admin, resource]
+    else
+      [:publish, :admin, resource]
+    end
+  end
 end

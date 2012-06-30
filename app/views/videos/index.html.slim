@@ -1,0 +1,9 @@
+h3 Videos
+- @videos.each do |v|
+  div.gallery
+    = link_to video_path(v), class: "fancybox" do
+      video width="150" height="150"
+        source src="#{asset_path(v.mpeg.url)}" type="video/mp4"
+        source src="#{asset_path(v.ogg.url)}"  type="video/ogg"
+
+= javascript_tag "showVideo();"

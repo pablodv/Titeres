@@ -14,4 +14,6 @@ table
       td
         = link_to "Edit", edit_admin_video_path(v)
         span |
+        = link_to v.published ? "Unpublish" : "Publish", determinate_path(v), :method => :put, :remote => true, :id => v.id
+        span |
         = link_to "Delete", admin_video_path(v), :method => :delete, :confirm => "Are you sure?"
