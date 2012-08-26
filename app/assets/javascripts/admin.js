@@ -13,13 +13,17 @@ $(document).ready(function() {
 });
 
 function initPlupload() {
+  var atoken = $("input[name=authenticity_token]").val();
+
   $("#uploader").pluploadQueue({
     // General settings
     runtimes : 'gears,flash,silverlight,browserplus,html5',
     url : '/admin/galleries/' + $('#gallery_id').val() + '/gallery_images',
-    max_file_size : '2mb',
-    chunk_size : '1mb',
+    max_file_size : '20mb',
+    chunk_size : '10mb',
     unique_names : true,
+    multipart: true,
+    multipart_params : {authenticity_token : atoken},
 
     // Resize images on clientside if we can
     resize : { width : 320, height : 240, quality : 90 },
