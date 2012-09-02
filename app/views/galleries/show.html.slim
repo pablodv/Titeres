@@ -1,7 +1,7 @@
 #bg
   = link_to "", "#", class: "nextImageBtn", title: "next"
   = link_to "", "#", class: "prevImageBtn", title: "previous"
-  = image_tag asset_path(resource.gallery_images.first.image.url), size: "1680x1050", id: "bgimg"
+  = image_tag asset_path(@images.first.gsub("app/assets/images/", "")), size: "1680x1050", id: "bgimg"
 
 #preloader
   = image_tag asset_path("ajax-loader_dark.gif"), size: "32x32"
@@ -18,7 +18,7 @@
   #outer_container
     .thumbScroller
       .container
-        - resource.gallery_images.each do |gi|
+        - @images.each do |i|
           .content
             div
-              = link_to image_tag(asset_path(gi.image.url(:small))), asset_path(gi.image.url),class: "thumb"
+              = link_to image_tag(asset_path(i.gsub("app/assets/images/", "")), size: "230x148"), asset_path(i.gsub("app/assets/images/", "")),class: "thumb"

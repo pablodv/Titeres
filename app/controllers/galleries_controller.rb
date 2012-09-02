@@ -1,6 +1,12 @@
 class GalleriesController < InheritedResources::Base
   layout :resolve_layout
 
+  def show
+    show!{
+      @images = Dir.glob("app/assets/images/#{resource.name}/*.jpg")
+    }
+  end
+
   private
 
   def resolve_layout

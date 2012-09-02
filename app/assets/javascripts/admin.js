@@ -19,9 +19,9 @@ function initPlupload() {
     // General settings
     runtimes : 'gears,flash,silverlight,browserplus,html5',
     url : '/admin/galleries/' + $('#gallery_id').val() + '/gallery_images',
-    max_file_size : '20mb',
-    chunk_size : '10mb',
-    unique_names : true,
+    // max_file_size : '20mb',
+    // chunk_size : '10mb',
+    // unique_names : true,
     multipart: true,
     multipart_params : {authenticity_token : atoken},
 
