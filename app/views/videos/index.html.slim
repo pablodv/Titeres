@@ -3,7 +3,7 @@ h3 Videos
   div.gallery
     = link_to video_path(v), class: "fancybox" do
       video width="150" height="150"
-        source src="#{asset_path(v.mpeg.url)}" type="video/mp4"
-        source src="#{asset_path(v.ogg.url)}"  type="video/ogg"
+        source src="#{asset_path(Dir.glob("app/assets/images/videos/#{v.name}/*.mpeg").first.gsub("app/assets/images/", ""))}" type="video/mp4"
+        source src="#{asset_path(Dir.glob("app/assets/images/videos/#{v.name}/*.ogg").first.gsub("app/assets/images/", ""))}"  type="video/ogg"
 
 = javascript_tag "showVideo();"

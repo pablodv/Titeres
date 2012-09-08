@@ -6,13 +6,13 @@ class Video < ActiveRecord::Base
     :url  => "videos/:id/:style/:filename",
     :path => ":rails_root/app/assets/images/videos/:id/:style/:filename"
 
-  validates_attachment_content_type :mpeg,
-    :content_type => ['application/mp4', 'application/x-mp4',
-      'video/mpeg', 'video/mp4'],
-    :message => "solo se permiten archivos de video mpeg"
-  validates_attachment_content_type :ogg,
-    :content_type => ['video/ogg', 'application/ogg'],
-    :message => "solo se permiten archivos de video ogg"
+  #validates_attachment_content_type :mpeg,
+  #  :content_type => ['application/mp4', 'application/x-mp4',
+  #    'video/mpeg', 'video/mp4'],
+  #  :message => "solo se permiten archivos de video mpeg"
+  #validates_attachment_content_type :ogg,
+  #  :content_type => ['video/ogg', 'application/ogg'],
+  #  :message => "solo se permiten archivos de video ogg"
 
   scope :published, where(:published => true)
 

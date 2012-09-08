@@ -1,3 +1,3 @@
 video controls="controls"
-  source src="#{asset_path(resource.mpeg.url)}" type="video/mp4"
-  source src="#{asset_path(resource.ogg.url)}"  type="video/ogg"
+  source src="#{asset_path(Dir.glob("app/assets/images/videos/#{resource.name}/*.mpeg").first.gsub("app/assets/images/", ""))}" type="video/mp4"
+  source src="#{asset_path(Dir.glob("app/assets/images/videos/#{resource.name}/*.ogg").first.gsub("app/assets/images/", ""))}"  type="video/ogg"
