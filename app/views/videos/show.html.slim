@@ -1,3 +1,5 @@
-video controls="controls"
-  source src="#{asset_path(Dir.glob("app/assets/images/videos/#{resource.name}/*.mpeg").first.gsub("app/assets/images/", ""))}" type="video/mp4"
-  source src="#{asset_path(Dir.glob("app/assets/images/videos/#{resource.name}/*.ogg").first.gsub("app/assets/images/", ""))}"  type="video/ogg"
+object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="800" height="600" codebase="http://active.macromedia.com/flash5/cabs/swflash.cab#version=5,0,0,0"
+
+  param name="MOVIE" value="#{asset_path(Dir.glob("app/assets/images/videos/#{resource.name}/*.swf").first.gsub("app/assets/images/", ""))}"
+
+  embed src="#{asset_path(Dir.glob("app/assets/images/videos/#{resource.name}/*.swf").first.gsub("app/assets/images/", ""))}" width="800" height="600" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"

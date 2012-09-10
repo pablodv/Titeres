@@ -4,4 +4,6 @@ h3 Galerias
       br/
 
   div.gallery
-    = link_to image_tag(asset_path(Dir.glob("app/assets/images/#{g.name}/*.jpg").first.gsub("app/assets/images/", "")), size: "75x75"), gallery_path(g)
+    = link_to gallery_path(g) do
+      = image_tag(asset_path(Dir.glob("app/assets/images/#{g.name}/*.jpg").first.gsub("app/assets/images/", "")), size: "75x75")
+      span= g.name.titleize
