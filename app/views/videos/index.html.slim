@@ -1,6 +1,6 @@
 h3 Videos
 - @videos.each do |v|
-  div.gallery
+  div.video
     = link_to v.name.titleize, video_path(v), class: "fancybox"
 
 = javascript_tag "showVideo();"
