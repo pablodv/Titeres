@@ -4,7 +4,7 @@ class NotificationsMailer < ActionMailer::Base
   def new_message(message)
     @message = message
     mail(
-      :from    => message.email,
+      :from    => [message.email],
       :subject => "Nueva Consulta"
     )
   end
