@@ -22,3 +22,8 @@
           .content
             div
               = link_to image_tag(asset_path(i.gsub("app/assets/images/", "")), size: "230x148"), asset_path(i.gsub("app/assets/images/", "")),class: "thumb"
+
+if Dir.glob("app/assets/images/#{resource.name}/*.mp3").present? || Dir.glob("app/assets/images/#{resource.name}/*.ogg").present?
+  audio
+    source src="#{asset_path(Dir.glob("app/assets/images/#{resource.name}/*.mp3").first.gsub("app/assets/images/", ""))}" type="audio/mpeg"
+    source src="#{asset_path(Dir.glob("app/assets/images/#{resource.name}/*.ogg").first.gsub("app/assets/images/", ""))}"  type="audio/ogg"

@@ -7,7 +7,7 @@ class Gallery < ActiveRecord::Base
 
   validates :name, :presence => true
 
-  scope :published, where(:published => true).order('name DESC')
+  scope :published, where(:published => true).order('name ASC')
 
   def publish!
     update_attribute :published, true
