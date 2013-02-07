@@ -10,16 +10,24 @@ body {
   background:#000;
 }
 
-#toolbar {
+#back {
   position: fixed;
   z-index: 3;
   right: 10px;
   top: 10px;
   padding: 5px;
-  background: url(<% asset_path "fs_img_g_bg.png" %>);
 }
 
-#toolbar img { border: none; }
+#back a {
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  line-height: 18px;
+}
+
+#back a:visited { color: white; }
 
 #img_title {
   position: fixed;
